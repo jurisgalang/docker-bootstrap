@@ -2,6 +2,8 @@
 
 Bootstrapper for Docker-based projects using Rails with nginx and PostgreSQL DB.
 
+[![GitHub Actions](https://github.com/jurisgalang/docker-bootstrap/workflows/CI/badge.svg?style=for-the-badge)](https://github.com/jurisgalang/docker-bootstrap/actions)
+
 ## Requires
 
 - docker `v19.03.8`

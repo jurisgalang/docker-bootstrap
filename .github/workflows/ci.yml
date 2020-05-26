@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run hadolint
-      run: hadolint web/Dockerfile nginx/Dockerfile
+      run: hadolint web/Dockerfile nginx/Dockerfile --ignore DL3018

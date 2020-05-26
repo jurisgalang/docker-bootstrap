@@ -1,8 +1,7 @@
 FROM ruby:2.7.1-alpine3.11
 
 RUN apk update && \
-  apk upgrade && \
-  apk add --update --no-cache \
+  apk add --no-cache \
   bash \
   binutils-gold \
   build-base \
@@ -12,20 +11,20 @@ RUN apk update && \
   gcc \
   git \
   less \
-  libc-dev \ 
+  libc-dev \
   libffi-dev \
-  libgcrypt-dev \  
+  libgcrypt-dev \
   libstdc++ \
   libxml2-dev \
   libxslt-dev \
   linux-headers \
   make \
-  netcat-openbsd \  
+  netcat-openbsd \
   nodejs \
   openssl \
   pkgconfig \
-  postgresql-dev \  
-  python \  
+  postgresql-dev \
+  python \
   sqlite-dev \
   tree \
   tzdata \
@@ -35,8 +34,6 @@ RUN apk update && \
 
 RUN echo 'alias be="bundle exec"' >> ~/.bashrc
 RUN mkdir -p /opt/bin
-
-RUN gem install bundler
 
 ENV APP_PATH /app
 WORKDIR $APP_PATH
@@ -58,4 +55,4 @@ RUN echo "ruby-2.7.1" > .ruby-version
 ENTRYPOINT ["/opt/bin/entrypoint.sh"]
 
 EXPOSE $PORT
-CMD bundle exec rails s -p 3000 -b 0.0.0.0
+CMD ["bundle", "exec", "rails", "s", "-p 3000", "-b 0.0.0.0"]

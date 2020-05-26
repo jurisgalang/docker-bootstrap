@@ -11,21 +11,21 @@ Bootstrapper for Docker-based projects using Rails with nginx and PostgreSQL DB.
 
 ## Usage
 
-The following steps will create the Docker images and setup a Rail 6 project 
-using a PostgreSQL DB.
+The following steps will create the Docker images and setup a Rails project 
+using the PostgreSQL DB.
 
 ```sh
 # shallow clone bootstrap files and re-init the repo
 $ git clone --depth 1 git@github.com:jurisgalang/docker-bootstrap.git project-name
 $ cd project-name/
-$ rm -rf .git
+$ rm -rf .git .github
 $ git init
 
 # build images
 $ docker-compose build
 
 # install rails in web container and create a project using postgresql 
-$ docker-compose run --rm web gem install rails
+$ docker-compose run --rm web gem install bundler rails
 $ docker-compose run --rm web rails new . -d postgresql --skip-test
 
 # create posgresql db config
@@ -58,14 +58,14 @@ $ docker-compose run --rm web rake db:setup
 
 # spin-up web app and test
 $ docker-compose run --rm --service-ports web
-$ curl -I http://localhost:3000/ # => expect HTTP/1.1 200 OK
+$ curl -I http://localhost:3000/ 
 
 # spin-up nginx to serve the web app and test
 $ docker-compose run --rm --service-ports nginx
-$ curl -I http://localhost/ # => expect HTTP/1.1 200 OK
+$ curl -I http://localhost/ 
 ```
 
-The Rails project resides at `./web`; after the setup and verification -- its 
+The Rails project resides at `./web`; after the setup and verification its 
 `Dockerfile` will need to be updated for project specific requirements and to 
 make it suitable for deployment.
 

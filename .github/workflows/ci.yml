@@ -9,6 +9,7 @@ on:
 jobs:
   linter:
     runs-on: ubuntu-latest
+    container: pipelinecomponents/hadolint:latest
     steps:
     - uses: actions/checkout@v2
     - name: Run hadolint

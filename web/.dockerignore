@@ -1,0 +1,61 @@
+.bin
+.git
+.gitignore
+
+# macOS
+.AppleDouble
+.DS_Store
+.LSOverride
+
+# icon must end with two \r
+Icon
+
+# thumbnails
+._*
+
+# files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+.apdisk
+Network Trash Folder
+Temporary Items
+
+# rails
+**.orig
+*.rbc
+.bundle
+.bundleignore
+.byebug_history
+.env
+.env.sample
+.rspec
+.ruby-gemset
+.ruby-version
+.rvmrc
+
+README.md
+capybara-*.html
+config/deploy
+coverage/
+db/*.sqlite3
+db/*.sqlite3-journal
+log
+node_modules
+public/packs
+public/packs-test
+public/system
+spec
+spec/tmp
+storage
+test
+tmp
+yarn-error.log
+
+# if using bower-rails ignore default bower_components path bower.json files
+*.bowerrc
+bower.json
+vendor/assets/bower_components
